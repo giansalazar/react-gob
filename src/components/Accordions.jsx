@@ -18,7 +18,7 @@ function Accordions() {
                             <p><strong>Enlace:</strong></p>
                             <a target="_blank" href="https://slpgob-api.onrender.com/">API REST</a>
 
-                            <p className='mt-4'><strong>Credenciales:</strong></p>
+                            <p className='mt-4'><strong>Credenciales para acceder:</strong></p>
                             <ul>
                                 <li>Usuario: rommel</li>
                                 <li>Password: co18mu20*</li>
