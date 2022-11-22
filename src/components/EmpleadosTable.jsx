@@ -1,15 +1,25 @@
-import React from 'react'
+import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import * as PersonalServer from '../services/PersonalServer'
+import ModalForm from './ModalForm';
 
 function EmpleadosTable({ empleados, listaEmpleados }) {
 
     const handleDelete = async (empleado_id) => {
         await PersonalServer.deleteEmpleado(empleado_id)
         listaEmpleados()
+
+    }
+
+    console.log(empleados)
+    const navigate = useNavigate()
+
+    const handleEditEmpleado = (empleado_id) =>{
+        navigate(`/updateEmpleado/${empleado_id}`)
     }
     return (
         <>
-            
+
             <div className='table-responsive'>
                 <table id='empleados' class="table table-stripped">
                     <thead>
@@ -29,26 +39,28 @@ function EmpleadosTable({ empleados, listaEmpleados }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {empleados.map((empleado) => (
+                        {empleados.map((emp) => (
                             <tr>
-                                <td>{empleado.persona.apep}</td>
-                                <td>{empleado.persona.apem}</td>
-                                <td>{empleado.persona.nombre}</td>
-                                <td>{empleado.persona.genero}</td>
-                                <td>{empleado.persona.edad}</td>
-                                <td>{empleado.carrera}</td>
-                                <td>{empleado.grado_estudios}</td>
-                                <td>{empleado.puesto.nombre}</td>
-                                <td>{empleado.jefatura.nombre}</td>
-                                <td>{empleado.persona.apep}</td>
-                                <td>{empleado.direccion.calle} {empleado.direccion.num_ext}</td>
-                                <td><button className='btn-action btn-delete' onClick={() => empleado.persona.id && handleDelete(empleado.persona.id)}><i class="bi bi-trash"></i></button><button className='btn-action btn-edit'><i class="bi bi-pen"></i></button><button className='btn-action btn-export-pdf'><i class="bi bi-filetype-pdf"></i></button></td>
+                                <td>{emp.empleado.persona.apep}</td>
+                                <td>{emp.empleado.persona.apem}</td>
+                                <td>{emp.empleado.persona.nombre}</td>
+                                <td>{emp.empleado.persona.genero}</td>
+                                <td>{emp.empleado.persona.edad}</td>
+                                <td>{emp.empleado.carrera}</td>
+                                <td>{emp.empleado.grado_estudios}</td>
+                                <td>{emp.empleado.puesto.nombre}</td>
+                                <td>{emp.empleado.jefatura.nombre}</td>
+                                <td>+{emp.extension} {emp.telefono}</td>
+                                <td>{emp.empleado.direccion.calle} {emp.empleado.direccion.num_ext}</td>
+                                <td><button className='btn-action btn-delete' onClick={() => emp.empleado.persona.id && handleDelete(emp.empleado.persona.id)}><i class="bi bi-trash"></i></button><button className='btn-action btn-edit'  onClick={() => emp.empleado.persona.id && handleEditEmpleado(emp.id)}><i class="bi bi-pen"></i></button></td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
 
             </div>
+
+            <ModalForm/>
 
         </>
     )

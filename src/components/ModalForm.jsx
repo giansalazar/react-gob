@@ -1,41 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import * as PersonalServer from '../services/PersonalServer'
-import { useNavigate } from 'react-router-dom'
+import Context from '../context/Context'
 
-function ModalForm() {
-    const [jefaturas, setJefaturas] = useState([])
-    const [puestos, setPuestos] = useState([])
-    const [entidades, setEntidades] = useState([])
 
-    const listaJefaturas = async () => {
-        try {
-            const res = await PersonalServer.listaJefaturas()
-            const data = await res.json()
-            setJefaturas(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+function ModalForm({ show }) {
 
-    const listaPuestos = async () => {
-        try {
-            const res = await PersonalServer.listaPuestos()
-            const data = await res.json()
-            setPuestos(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const listaEntidades = async () => {
-        try {
-            const res = await PersonalServer.listaEntidades()
-            const data = await res.json()
-            setEntidades(data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const { jefaturas, setJefaturas, puestos, setPuestos, entidades, setEntidades, listaEntidades, listaJefaturas, listaPuestos, empleado, setEmpleado, handleInputChange, handleSelectChange } = useContext(Context)
 
     useEffect(() => {
         listaJefaturas()
@@ -43,22 +13,9 @@ function ModalForm() {
         listaEntidades()
     }, [])
 
-    const empleadoState = { nombre: "", apep: "", apem: "", edad: "", genero: "", puesto: "", jefatura: "", grado_estudios: "", carrera: "", calle: "", num_ext: "", municipio: "", entidad:"", num_int: 0, cp: "", localidad: "" }
-    const [empleado, setEmpleado] = useState(empleadoState)
-
-    const handleInputChange = (e) => {
-        setEmpleado({ ...empleado, [e.target.name]: e.target.value })
-    }
-
-    const handleSelectChange = (e) => {
-        console.log(e.target.name)
-        setEmpleado({ ...empleado, [e.target.name]: e.target.value })
-        console.log(e.target.value)
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        document.getElementById('btn-submit-user').disabled=true;
+        document.getElementById('btn-submit-user').disabled = true;
         try {
             let res;
             res = await PersonalServer.createPersona(empleado)
@@ -70,13 +27,19 @@ function ModalForm() {
             const dir = await resDir.json()
             console.log(dir.id, person.id)
 
+
             let resEmp;
             resEmp = await PersonalServer.createEmpleado(empleado, person.id, dir.id)
             const emp = await resEmp.json()
 
+            let resTel;
+            resTel = await PersonalServer.createTelefono(empleado)
+            const tel = await resTel.json()
 
-            if (emp) {
+
+            if (tel) {
                 window.location.reload();
+                alert("Se creo el empleado correctamente")
             }
 
             else {
@@ -87,9 +50,10 @@ function ModalForm() {
         }
     }
 
+
     return (
         <div>
-            <div className="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal modal-xl fade" show={show} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -239,7 +203,7 @@ function ModalForm() {
                                     <div className="mb-3 col-md-4">
                                         <div className="form-group">
                                             <label for="exampleInputEmail1" className="form-label">Entidad</label>
-                                            <select className='form-select' name="entidad" id="entidad"  value={empleado.entidad} onChange={handleSelectChange}>
+                                            <select className='form-select' name="entidad" id="entidad" value={empleado.entidad} onChange={handleSelectChange}>
                                                 <option value="">Seleccione una entidad federativa</option>
                                                 {entidades.map((entidad) => (
                                                     <option value={entidad.id}>{entidad.nombre}</option>
@@ -256,10 +220,21 @@ function ModalForm() {
                                     <div className="mb-3 col-md-4">
                                         <div className="form-group">
                                             <label for="exampleInputEmail1" className="form-label">Extensión</label>
-                                            <select className='form-select' name="puesto" id="puesto">
+                                            <select className='form-select' name="extension" id="extension" value={empleado.extension} onChange={handleSelectChange}>
                                                 <option value="">Seleccione una extensión</option>
                                                 <option value="52">+52 México</option>
                                                 <option value="1">+1 Estados Unidos</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div className="mb-3 col-md-4">
+                                        <div className="form-group">
+                                            <label for="exampleInputEmail1" className="form-label">Tipo</label>
+                                            <select className='form-select' name="tipo" id="tipo" value={empleado.tipo} onChange={handleSelectChange}>
+                                                <option value="">Seleccione un tipo de línea</option>
+                                                <option value="Movil">Movil</option>
+                                                <option value="Fija">Fija</option>
                                             </select>
                                         </div>
                                     </div>

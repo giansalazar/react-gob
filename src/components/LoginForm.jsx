@@ -32,10 +32,13 @@ function LoginForm() {
                 )
 
                 navigate('/empleados')
+                window.location.reload()
+                alert("Bienvenid@ "+ data.user.username)
             }
 
             else {
                 setUsuario(initialState)
+                alert("las credenciales son incorrectas")
             }
         } catch (error) {
             console.log(error)

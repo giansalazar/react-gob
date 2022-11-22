@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import EmpleadosTable from '../components/EmpleadosTable'
+import DataTableEmpleados from '../components/DataTableEmpleados'
 import * as PersonalServer from './PersonalServer'
 
 function EmpleadosList() {
@@ -22,7 +23,7 @@ function EmpleadosList() {
 
     return (
         <div>
-            <EmpleadosTable empleados={empleados} listaEmpleados={listaEmpleados} />
+            <EmpleadosTable empleados={empleados} listaEmpleados={listaEmpleados}></EmpleadosTable>
         </div>
     )
 }

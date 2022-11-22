@@ -10,9 +10,11 @@ import {
 import Navbar from './components/Navbar';
 import Footer from './components/Footer'
 import GestionEmpleados from './components/GestionEmpleados'
+import ModalForm from './components/ModalForm';
 import ProtectedRoute from './routes/ProtectedRoute'
 import VerifyLogin from './routes/VerifyLogin';
 import { ContextProvider, Context } from './context/Context'
+import UpdateEmpleado from './components/UpdateEmpleado';
 
 
 
@@ -25,6 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/empleados" element={<ProtectedRoute redirectTo='/empleados'> <GestionEmpleados /></ProtectedRoute>} />
         <Route path="/login" element={<VerifyLogin><Login /></VerifyLogin>} />
+        <Route path='/updateEmpleado/:id' element={<ProtectedRoute><UpdateEmpleado></UpdateEmpleado></ProtectedRoute>}></Route>
       </Routes>
       <Navbar></Navbar>
       <Footer></Footer>
