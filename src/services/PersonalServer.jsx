@@ -1,14 +1,14 @@
 //urls de las apis del personal
-const PersonasAPI = "http://127.0.0.1:8000/api/personas/";
-const JefaturasAPI = "http://127.0.0.1:8000/api/jefaturas/";
-const PuestosAPI = "http://127.0.0.1:8000/api/puestos/";
-const EmpleadosAPI = "http://127.0.0.1:8000/api/empleados/";
-const EmpleadosListadoAPI = "http://127.0.0.1:8000/api/empleadosListado/";
-const EntidadesAPI = "http://127.0.0.1:8000/api/entidades/";
-const DireccionesAPI = "http://127.0.0.1:8000/api/direcciones/";
-const DirectorioAPI = "http://127.0.0.1:8000/api/directorio/";
-const DirectorioBasicAPI = "http://127.0.0.1:8000/api/directorio_basic/";
-const LoginAPI = "http://127.0.0.1:8000/login/"
+const PersonasAPI = "https://slpgob-api.onrender.com/api/personas/";
+const JefaturasAPI = "https://slpgob-api.onrender.com/api/jefaturas/";
+const PuestosAPI = "https://slpgob-api.onrender.com/api/puestos/";
+const EmpleadosAPI = "https://slpgob-api.onrender.com/api/empleados/";
+const EmpleadosListadoAPI = "https://slpgob-api.onrender.com/api/empleadosListado/";
+const EntidadesAPI = "https://slpgob-api.onrender.com/api/entidades/";
+const DireccionesAPI = "https://slpgob-api.onrender.com/api/direcciones/";
+const DirectorioAPI = "https://slpgob-api.onrender.com/api/directorio/";
+const DirectorioBasicAPI = "https://slpgob-api.onrender.com/api/directorio_basic/";
+const LoginAPI = "https://slpgob-api.onrender.com/login/"
 
 
 //Listar el contenido de las apis
