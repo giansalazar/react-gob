@@ -216,9 +216,24 @@ input {
     margin-top: 2vh !important;
   }
 
-  #card-login{
-    width: 18rem !important;
+  .container-login {
+    width: 100%;
+    height: 100vh !important;
+    position: relative;
+    margin: auto auto;
+    align-items: center;
   }
+
+  #card-login{
+    width: 16rem !important;
+    position: absolute;
+    padding: 0;
+    margin: auto auto;
+    margin-top: 5vh;
+    
+  }
+
+  
 }
 
 /* --- Footer --- */

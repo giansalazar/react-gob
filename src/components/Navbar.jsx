@@ -63,9 +63,6 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/react-gob">Inicio</Link>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/#contenido">Contenido</a>
-                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i>

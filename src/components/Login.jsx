@@ -6,7 +6,6 @@ function Login() {
 
   return (
     <>
-        <Navbar />
         <div className="container-login">
             <LoginForm />
         </div>
