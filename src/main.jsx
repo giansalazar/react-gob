@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     
       <Routes>
-        <Route path="/react-gob" element={<App />} />
+        <Route path="/react-gob/" element={<App />} />
         <Route path="/" element={<App />} />
         <Route path="/empleados" element={<ProtectedRoute redirectTo='/empleados'> <GestionEmpleados /></ProtectedRoute>} />
         <Route path="/login" element={<VerifyLogin><Login /></VerifyLogin>} />
