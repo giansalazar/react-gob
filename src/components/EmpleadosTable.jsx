@@ -15,7 +15,7 @@ function EmpleadosTable({ empleados, listaEmpleados }) {
     const navigate = useNavigate()
 
     const handleEditEmpleado = (empleado_id) =>{
-        navigate(`/updateEmpleado/${empleado_id}`)
+        navigate(`react-gob/updateEmpleado/${empleado_id}`)
     }
     return (
         <>

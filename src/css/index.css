@@ -216,6 +216,9 @@ input {
     margin-top: 2vh !important;
   }
 
+  #card-login{
+    width: 18rem !important;
+  }
 }
 
 /* --- Footer --- */
