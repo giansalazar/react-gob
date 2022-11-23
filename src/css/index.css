@@ -218,16 +218,16 @@ input {
 
   .container-login {
     width: 100%;
+    padding: 50px !important;
     height: 100vh !important;
-    position: relative;
     margin: auto auto;
+    margin-top: 10vh;
     align-items: center;
   }
 
   #card-login{
-    width: 16rem !important;
-    position: absolute;
-    padding: 0;
+    width: 18rem !important;
+    padding: 10px;
     margin: auto auto;
     margin-top: 5vh;
     

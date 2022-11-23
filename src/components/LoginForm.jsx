@@ -31,9 +31,10 @@ function LoginForm() {
                     })
                 )
 
-                navigate('/react-gob/empleados')
-                window.location.reload()
+                navigate('/react-gob/empleados/')
                 alert("Bienvenid@ "+ data.user.username)
+                
+                window.location.reload()
             }
 
             else {
@@ -46,7 +47,7 @@ function LoginForm() {
     }
 
     return (
-        <>
+        <div>
             <div id='card-login' class="card">
                 <h2>Iniciar Sesión</h2><hr />
                 <div class="card-body">
@@ -64,7 +65,7 @@ function LoginForm() {
                 </div>
             </div>
 
-        </>
+        </div>
     )
 }
 
