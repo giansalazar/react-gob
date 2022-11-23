@@ -31,7 +31,7 @@ function LoginForm() {
                     })
                 )
 
-                navigate('/empleados')
+                navigate('/react-gob/empleados')
                 window.location.reload()
                 alert("Bienvenid@ "+ data.user.username)
             }

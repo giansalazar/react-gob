@@ -18,7 +18,7 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+                                <Link className="nav-link active" aria-current="page" to="/react-gob">Inicio</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/#contenido">Contenido</a>
@@ -29,7 +29,7 @@ function Navbar() {
                                     <i class="bi bi-person-lines-fill"></i> Empleados
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" to="/empleados">Ver Empleados</Link></li>
+                                    <li><Link className="dropdown-item" to="/react-gob/empleados">Ver Empleados</Link></li>
 
                                 </ul>
                             </li>
@@ -61,7 +61,7 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+                                <Link className="nav-link active" aria-current="page" to="/react-gob">Inicio</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/#contenido">Contenido</a>
@@ -72,7 +72,7 @@ function Navbar() {
                                 </a>
                                 <ul className="dropdown-menu">
 
-                                    <li><Link className="dropdown-item" to="/login/">Iniciar Sesión</Link></li>
+                                    <li><Link className="dropdown-item" to="/react-gob/login/">Iniciar Sesión</Link></li>
                                     
 
                                 </ul>

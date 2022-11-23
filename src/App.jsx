@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Carousel></Carousel>
-      <div className='container'>
+      <div className='container container-app'>
         <h2>Contenido de la Página</h2><hr className='red' />
         <Accordions></Accordions>
       </div>

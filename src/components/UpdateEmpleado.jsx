@@ -60,7 +60,7 @@ function UpdateEmpleado() {
 
 
             if (emp) {
-                navigate('/empleados')
+                navigate('/react-gob/empleados')
                 window.location.reload();
                 alert("Se actualizó el empleado correctamente")
             }

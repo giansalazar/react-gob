@@ -50,7 +50,7 @@ html {
 }
 
 .carousel {
-  margin-bottom: 5vh;
+  margin-bottom: 1vh !important;
   margin-top: 15vh;
 }
 
@@ -205,6 +205,15 @@ input {
 
   .offset-8 {
     margin-left: 0;
+  }
+
+  .carousel {
+    margin-bottom: 2vh !important;
+    margin-top: 12vh;
+  }
+
+  .container-app{
+    margin-top: 3vh !important;
   }
 
 }

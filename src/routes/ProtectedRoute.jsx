@@ -4,14 +4,14 @@ const ProtectedRoute = ({children, redirectTo }) => {
     const userLogged = window.localStorage.getItem('LoggedGobUser')
     
     if(userLogged){
-        if(redirectTo==="/login"){
+        if(redirectTo==="/react-gob/login"){
             return <Navigate to="/" /> 
         }else{
             return children
         }
         
     }else{
-        return <Navigate to="/login" />
+        return <Navigate to="/react-gob/login" />
     }
     
 }

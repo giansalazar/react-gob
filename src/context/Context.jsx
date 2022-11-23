@@ -25,7 +25,9 @@ export function ContextProvider(props) {
     const handleLogout = () => {
         setUsuarioSesion(null)
         window.localStorage.removeItem('LoggedGobUser')
-        navigate('/login')
+        navigate('/react-gob/login')
+        
+        
     }
 
 
